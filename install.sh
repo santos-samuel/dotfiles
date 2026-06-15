@@ -116,6 +116,9 @@ symlink "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 symlink "$DOTFILES_DIR/scripts/rom.sh" "$HOME/rom.sh"
 chmod +x "$HOME/rom.sh"
 
+# --- zsh ---
+symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
+
 # --- zsh theme ---
 symlink "$DOTFILES_DIR/zsh/robbyrussell.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/robbyrussell.zsh-theme"
 
