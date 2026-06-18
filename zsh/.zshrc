@@ -88,9 +88,11 @@ fzf-history-widget() {
   local selected
   selected=$(fc -rl 1 | fzf --height 40% --reverse --tiebreak=index | sed 's/^[ ]*[0-9]*[ ]*//')
   if [[ -n "$selected" ]]; then
-    LBUFFER="$selected"
-    # zle accept-line
+    BUFFER="$selected"
+    CURSOR=${#BUFFER}
   fi
+  zle reset-prompt
+  zle -R
 }
 zle -N fzf-history-widget
 bindkey '^R' fzf-history-widget
