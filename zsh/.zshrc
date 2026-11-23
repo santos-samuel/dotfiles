@@ -100,5 +100,15 @@ bindkey '^R' fzf-history-widget
 # Company-specific, API keys, etc.
 [ -f ~/.secrets ] && . ~/.secrets
 
+# direnv (per-repo env, e.g. branch-local rapid-bin)
+eval "$(direnv hook zsh)"
+
 # Added by Yarn Switch
 source "/Users/samuel.santos/.yarn/switch/env"
+
+# Trajectory - AI coding agent observability
+export PATH="/Users/samuel.santos/.trajectory/bin:$PATH"
+
+# dogbrew shell-hooks: if you don't want this to be called, comment it out and dogbrew will honour that on subsequent updates.  See also the more dangerous `dogbrew self setup --disable-shell-hooks`.
+[ -f "/opt/dogbrew/share/etc/dogbrew/init.zsh" ] && . "/opt/dogbrew/share/etc/dogbrew/init.zsh"
+export PATH="/opt/dogbrew/bin:$PATH"
